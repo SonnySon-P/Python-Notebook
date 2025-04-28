@@ -26,9 +26,9 @@ def runPythonCode(code: str, userID: str) -> str:
         # 從Redis載入使用者的全域變數
         userVariables = redisClient.get(userID)  # 根據userID查找Redis中的變數
         if userVariables:
-            localScope = json.loads(userVariables)  # 如果有，將其轉換為 Python 字典
+            localScope = json.loads(userVariables)  # 將其轉換為字典類型
         else:
-            localScope = {}  # 如果沒有，初始化一個空字典
+            localScope = {}  # 初始化一個空字典
 
         # 執行傳入的程式碼
         exec(code, {}, localScope)
