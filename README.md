@@ -1,4 +1,4 @@
-# Jupyter Notebook
+# 仿造一個Jupyter Notebook
 基於Node.js技術打造的RESTful API部落格後端平台。
 
 ## 壹、基本說明
