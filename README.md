@@ -11,7 +11,7 @@
 * 程式語言：Python
 * JavaScript執行環境：Node.js
 * RESTful API框架：FastAPI
-* 資料庫：Redis（主要作為紀載不同使用者提交的程式碼）
+* 資料庫：Redis(主要作為紀載不同使用者提交的程式碼)
 * 程式編輯器：Visual Studio Code
 
 2. 以下是前端開發該平台所採用的環境：
@@ -24,13 +24,33 @@
 
 **三、使用相依套件：**
 1. 以下是後端開發該平台所採用的套件：
-* fastapi（RESTful API框架）
+* fastapi(RESTful API框架)
 * pydantic(做為資料驗證與設定)
 * cors(跨域資源共享)
 
 2. 以下是前端開發該平台所採用的套件：
-* bulma（css框架）
-* fortawesome（字體和圖示工具套件）
+* bulma(css框架)
+* fortawesome(字體和圖示工具套件)
+
+**四、對於RESTful API請求：** 
+以下是此後端平台提供的RESTful API端點，包含對應的http方法、路徑及參數說明，如下所示：
+* `POST` /initialize-global-variables：初始化使用者的全域變數
+* `POST` /execute：執行程式碼(請求有userID跟code)
+
+**五、檔案說明：** 
+此專案檔案（指coding這個資料夾）主要分為兩個資料夾：Backend和Frontend。其中，Backend資料夾為後端平台的主要程式碼，Frontend資料夾則為前端平台的部分主要程式碼。接下來將對各資料夾中的檔案內容進行詳細說明。
+1. Backend
+* main.py：為RESTful API的主要程式碼。
+
+2. Frontend
+* index.js：應用程式的進入點
+* app.js：應用的主要元件
+
+## 貳、操作說明
+**ㄧ、下載程式方式：** 
+檔案來源主要有兩種方式，具體如下所示：
+1. 從GitHub下載該檔案，並在有安裝Node.js與PostgreSQL的環境下，執行該程式。
+2. 透過Docker Hub搜尋randysonnyson/nodejs_blogging_restfulapi下載映像檔，該容器中除了Node.js外，PostgreSQL也安裝於其中。
 
 ```shell
 sudo apt update
