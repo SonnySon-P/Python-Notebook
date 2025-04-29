@@ -9,7 +9,6 @@
 1. 以下是後端開發該平台所採用的環境：
 * 虛擬機：Docker
 * 程式語言：Python
-* JavaScript執行環境：Node.js
 * RESTful API框架：FastAPI
 * 資料庫：Redis(主要作為紀載不同使用者提交的程式碼)
 * 程式編輯器：Visual Studio Code
