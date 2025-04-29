@@ -42,9 +42,9 @@
 1. Backend
 * main.py：為RESTful API的主要程式碼。
 
-2. Frontend
-* index.js：應用程式的進入點
-* app.js：應用的主要元件
+2. Frontend(請以React.js創建專案，並覆蓋src資料夾以下的這兩檔案)
+* index.js：應用程式的進入點，有別於原本檔案，加入了引入套件。
+* app.js：主要呈現的網頁內容。
 
 ## 貳、操作說明
 **ㄧ、下載程式方式：** 
@@ -66,3 +66,10 @@ cd my-app
 npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
 ```
+**二、運行結果：**
+在完成前後端架構建置後，以下為系統實際的網頁呈現畫面。
+<br>
+  <div align="center">
+  	<img src="./截圖.png" alt="Editor" width="500">
+  </div>
+<br>
