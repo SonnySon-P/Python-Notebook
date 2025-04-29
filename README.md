@@ -22,19 +22,20 @@
 * 程式編輯器：Visual Studio Code
 
 **三、使用相依套件：**
-1. 以下是後端開發該平台所採用的套件：
+1. 後端平台所採用的套件：
 * fastapi(RESTful API框架)
-* pydantic(做為資料驗證與設定)
+* pydantic(資料驗證與設定)
+* uvicorn(ASGI伺服器)
 * cors(跨域資源共享)
 
-2. 以下是前端開發該平台所採用的套件：
+2. 前端平台所採用的套件：
 * bulma(css框架)
 * fortawesome(字體和圖示工具套件)
 
 **四、對於RESTful API請求：** 
 以下是此後端平台提供的RESTful API端點，包含對應的http方法、路徑及參數說明，如下所示：
 * `POST` /initialize-global-variables：初始化使用者的全域變數
-* `POST` /execute：執行程式碼(請求有userID跟code)
+* `POST` /execute：執行程式碼(請求內容有userID跟code)
 
 **五、檔案說明：** 
 此專案檔案（指coding這個資料夾）主要分為兩個資料夾：Backend和Frontend。其中，Backend資料夾為後端平台的主要程式碼，Frontend資料夾則為前端平台的部分主要程式碼。接下來將對各資料夾中的檔案內容進行詳細說明。
@@ -42,29 +43,41 @@
 * main.py：為RESTful API的主要程式碼。
 
 2. Frontend(請以React.js創建專案，並覆蓋src資料夾以下的這兩檔案)
-* index.js：應用程式的進入點，有別於原本檔案，加入了引入套件。
+* index.js：應用程式的進入點，有別於原本檔案，加入了引入套件指令。
 * app.js：主要呈現的網頁內容。
 
 ## 貳、操作說明
-**ㄧ、下載程式方式：** 
-檔案來源主要有兩種方式，具體如下所示：
-1. 從GitHub下載該檔案，並在有安裝Node.js與PostgreSQL的環境下，執行該程式。
-2. 透過Docker Hub搜尋randysonnyson/nodejs_blogging_restfulapi下載映像檔，該容器中除了Node.js外，PostgreSQL也安裝於其中。
+由於前後端採用不同的系統架構，其安裝方式亦有所差異，具體操作如下所示：
+1. 後端平台
+* 安裝Redis
+```shell
+apt update
+apt install redis-server
+service redis-server start
+```
+* 安裝fastapi、pydantic、uvicorn、redis 
+```shell
+pip install fastapi pydantic uvicorn redis 
+```
+* 運行後端(將 main.py 檔案下載至本機，並根據以下指示執行)
+```shell
+uvicorn main:app --reload 
+```
+3. 前端平台
+* 安裝fontawesome套件
+```shell
+npm install @fortawesome/fontawesome-svg-core
+npm install @fortawesome/free-solid-svg-icons
+npm install @fortawesome/react-fontawesome
+``` 
+* 安裝React開發環境
+```shell
+npx create-react-app <專案名稱>
+cd <專案名稱>
+npm start
+```
+* 運行後端：將index.js和app.js檔案下載至本機React.js專案中的src資料夾，並根據以下指示執行。
 
-```shell
-sudo apt update
-sudo apt install redis-server
-sudo service redis-server start
-```
-```shell
-pip install fastapi pydantic redis uvicorn
-```
-```shell
-npx create-react-app my-app
-cd my-app
-npm install -D tailwindcss postcss autoprefixer
-npx tailwindcss init -p
-```
 **二、運行結果：**
 在完成前後端架構建置後，以下為系統實際的網頁呈現畫面。
 <br>
