@@ -34,31 +34,32 @@
 
 **四、對於RESTful API請求：** 
 以下是此後端平台提供的RESTful API端點，包含對應的http方法、路徑及參數說明，如下所示：
-* `POST` /initialize-global-variables：初始化使用者的全域變數
+* `POST` /initialize-global-variables：初始化使用者的全域變數(請求內容有userID)
 * `POST` /execute：執行程式碼(請求內容有userID跟code)
 
 **五、檔案說明：** 
-此專案檔案（指coding這個資料夾）主要分為兩個資料夾：Backend和Frontend。其中，Backend資料夾為後端平台的主要程式碼，Frontend資料夾則為前端平台的部分主要程式碼。接下來將對各資料夾中的檔案內容進行詳細說明。
+此專案檔案主要可分為兩個資料夾：Backend和Frontend。其中，Backend資料夾為後端平台的主要程式碼，Frontend資料夾則為前端平台的部分主要程式碼。接下來將對各資料夾中的檔案內容進行詳細說明。
 1. Backend
 * main.py：為RESTful API的主要程式碼。
 
 2. Frontend(請以React.js創建專案，並覆蓋src資料夾以下的這兩檔案)
-* index.js：應用程式的進入點，有別於原本檔案，加入了引入套件指令。
+* index.js：應用程式的進入點，有別於React.js初始化後的檔案，加入了引入套件的程式碼。
 * app.js：主要呈現的網頁內容。
 
 ## 貳、操作說明
 由於前後端採用不同的系統架構，其安裝方式亦有所差異，具體操作如下所示：
 1. 後端平台
-* 安裝Redis
+* Redis的安裝與啟動
 ```shell
 apt update
 apt install redis-server
 service redis-server start
 ```
-* 安裝fastapi、pydantic、uvicorn、redis 
+* 安裝fastapi、pydantic、uvicorn、redis等套件
 ```shell
 pip install fastapi pydantic uvicorn redis 
 ```
+* 複製main.py到合適資料夾
 * 運行後端(將 main.py 檔案下載至本機，並根據以下指示執行)
 ```shell
 uvicorn main:app --reload 
@@ -70,7 +71,7 @@ npm install @fortawesome/fontawesome-svg-core
 npm install @fortawesome/free-solid-svg-icons
 npm install @fortawesome/react-fontawesome
 ``` 
-* 安裝React開發環境
+* 安裝與初始化React開發環境
 ```shell
 npx create-react-app <專案名稱>
 cd <專案名稱>
@@ -79,7 +80,7 @@ npm start
 * 運行後端：將index.js和app.js檔案下載至本機React.js專案中的src資料夾，並根據以下指示執行。
 
 **二、運行結果：**
-在完成前後端架構建置後，以下為系統實際的網頁呈現畫面。
+當前後端架構完成建置後，您只需在瀏覽器中輸入http://localhost:3000以開啟應用程式。以下展示的是系統實際呈現的網頁畫面。
 <br>
   <div align="center">
   	<img src="./截圖.png" alt="Editor" width="500">
