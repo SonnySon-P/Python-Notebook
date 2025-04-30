@@ -80,7 +80,7 @@ npm start
 * 運行後端：將index.js和app.js檔案下載至本機React.js專案中的src資料夾，並根據以下指示執行。
 
 **二、運行結果：**
-當前後端架構完成建置後，您只需在瀏覽器中輸入http://localhost:3000以開啟應用程式。以下展示的是系統實際呈現的網頁畫面。
+當前後端架構完成建置後，您只需在瀏覽器中輸入localhost:3000以開啟應用程式。以下展示的是系統實際呈現的網頁畫面。
 <br>
   <div align="center">
   	<img src="./截圖.png" alt="Editor" width="500">
